@@ -15,5 +15,6 @@ module.exports = {
         semi: 'off',
         'linebreak-style': 'off',
         'import/no-unresolved': [2, { ignore: [`U|utils.*`] }],
+        'react/jsx-indent': [2, 4]
     },
 }
