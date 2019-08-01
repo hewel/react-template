@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext, createContext } from 'react'
 import PropTypes from 'prop-types'
+
+const NameContext = createContext('Me')
 
 function BaseText(props) {
   const { text } = props
@@ -7,10 +9,20 @@ function BaseText(props) {
   useEffect(() => {
     setName(`Hyper ${text}`)
   }, [text])
-  return <BaseSpan>I&#39;m {name} !</BaseSpan>
+  return (
+    <NameContext.Provider value={text}>
+      <BaseSpan>I&#39;m {name} !</BaseSpan>
+    </NameContext.Provider>
+  )
 }
+
 function BaseSpan({ children, ...extraProps }) {
-  return <span {...extraProps}>{children}</span>
+  const name = useContext(NameContext)
+  return (
+    <span {...extraProps}>
+      {name}-{children}
+    </span>
+  )
 }
 BaseText.defaultProps = {
   text: '仮面ライダーカブト',
