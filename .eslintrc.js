@@ -9,12 +9,30 @@ module.exports = {
         ecmaVersion: 2019,
         sourceType: 'module',
     },
-    extends: ['airbnb', 'prettier', 'plugin:prettier/recommended'],
-    plugins: ['prettier', 'emotion'],
+    extends: ['airbnb', 'plugin:react/recommended', 'plugin:prettier/recommended', 'prettier', 'prettier/react'],
+    plugins: ['prettier', 'emotion', 'react-hooks'],
     rules: {
         semi: 'off',
         'linebreak-style': 'off',
         'import/no-unresolved': [2, { ignore: [`U|utils.*`] }],
-        'react/jsx-indent': [2, 4]
+        'react/jsx-indent': [2, 2],
+        'import/extensions': [2, 'never', { jsx: 'always' }],
     },
+    overrides: [
+        {
+            files: ['*.jsx', '*.tsx'],
+            rules: {
+                // 'react/jsx-indent': 'off',
+                // 'prettier/prettier': 'off',
+                'react-hooks/rules-of-hooks': 'error',
+                'react-hooks/exhaustive-deps': 'warn',
+                'react/prop-types': [
+                    1,
+                    {
+                        ignore: ['className', 'children'],
+                    },
+                ],
+            },
+        },
+    ],
 }

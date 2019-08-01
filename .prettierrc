@@ -27,6 +27,15 @@
         "tabWidth": 2,
         "singleQuote": true
       }
+    },
+    {
+      "files": [
+        "*.jsx",
+        "*.tsx"
+      ],
+      "options": {
+        "tabWidth": 2
+      }
     }
   ]
 }

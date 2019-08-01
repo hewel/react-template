@@ -15,7 +15,7 @@ insert_final_newline = true
 max_line_length = 120
 semi = false
 space_in_paren = false
-[*.{vue,config.js,svelte,style.js}]
+[*.{vue,config.js,jsx,tsx,svelte,style.js}]
 indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
