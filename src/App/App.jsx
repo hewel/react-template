@@ -6,14 +6,14 @@ export default function App() {
   const [text, setText] = useState('Beetle')
 
   const handleBtnClick = () => {
-    setText(['Beetle', '哔头', 'Kabuto'][Math.floor(Math.random() * 3)])
+    setText(['Beetle', 'Bacon', 'Pizza', 'Bike', 'Chair'][Math.floor(Math.random() * 5)])
   }
 
   return (
     <div className="app">
-      <span>Hello World!</span>
-      <PrimaryButton onClick={handleBtnClick}>Change Beetle</PrimaryButton>
-      <BaseText text={text} />
+      <span>Hello {text}!</span>
+      <PrimaryButton onClick={handleBtnClick}>Change {text}</PrimaryButton>
+      <BaseText>{text}</BaseText>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { SourceMapDevToolPlugin } = require("webpack");
 
 const join = (...paths) => path.join(__dirname, ...paths);
 const mode = process.env.NODE_ENV || "development";
@@ -13,6 +14,10 @@ const HtmlPluginConfig = {
   favicon: join("public", "favicon.png"),
 };
 
+// const DevToolPluginConfig = {
+//   filename: "[name].js.map",
+// };
+
 module.exports = {
   entry: ["./src/index.js"],
   output: {
@@ -24,14 +29,17 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: join("src"),
-        exclude: /(node_modules|bower_components)/,
         use: ["babel-loader"],
       },
     ],
   },
-  devtool: isProd ? "nosources-source-map" : "eval-source-map",
+  devtool: isProd && "cheap-module-eval-source-map",
   devServer: {
     port: 7575,
   },
-  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin(HtmlPluginConfig)],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin(HtmlPluginConfig),
+    // new SourceMapDevToolPlugin(DevToolPluginConfig),
+  ],
 };

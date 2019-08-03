@@ -10,7 +10,7 @@ module.exports = {
         sourceType: 'module',
     },
     extends: ['airbnb', 'plugin:react/recommended', 'plugin:prettier/recommended', 'prettier', 'prettier/react'],
-    plugins: ['prettier', 'emotion', 'react-hooks'],
+    plugins: ['prettier', 'emotion'],
     rules: {
         semi: 'off',
         'linebreak-style': 'off',
@@ -21,6 +21,7 @@ module.exports = {
     overrides: [
         {
             files: ['*.jsx', '*.tsx'],
+            plugins: ['react-hooks'],
             rules: {
                 // 'react/jsx-indent': 'off',
                 // 'prettier/prettier': 'off',

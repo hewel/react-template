@@ -3,10 +3,6 @@ node_modules
 dist
 build
 public/bundle.*
-package-lock.json
-yarn.lock
-
-
 
 # local env files
 .env.local
