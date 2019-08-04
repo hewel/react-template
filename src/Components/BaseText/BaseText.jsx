@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 const NameContext = createContext('Me')
 
 function BaseText(props) {
-  const { text } = props
+  const { children } = props
   const [name, setName] = useState('仮面ライダーカブト')
   useEffect(() => {
-    setName(`Hyper ${text}`)
-  }, [text])
+    setName(`Hyper ${children}`)
+  }, [children])
   return (
-    <NameContext.Provider value={text}>
+    <NameContext.Provider value={children}>
       <BaseSpan>I&#39;m {name} !</BaseSpan>
     </NameContext.Provider>
   )
@@ -25,10 +25,10 @@ function BaseSpan({ children, ...extraProps }) {
   )
 }
 BaseText.defaultProps = {
-  text: '仮面ライダーカブト',
+  children: '仮面ライダーカブト',
 }
 BaseText.propTypes = {
-  text: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default BaseText
