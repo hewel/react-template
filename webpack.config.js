@@ -24,6 +24,12 @@ module.exports = {
     path: join("dist"),
     filename: "[name].bundle.js",
   },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: "all",
+    },
+  },
   module: {
     rules: [
       {
