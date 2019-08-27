@@ -11,7 +11,8 @@
         "*.less",
         "*.scss",
         "*.config.*",
-        "*.eslintrc.*"
+        "*.eslintrc.*",
+        "webpack/**/*"
       ],
       "options": {
         "tabWidth": 2,
