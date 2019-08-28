@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-// const { SourceMapDevToolPlugin } = require("webpack");
 
 const join = (...paths) => path.join(__dirname, "../", ...paths);
 
@@ -12,9 +11,11 @@ const HtmlPluginConfig = {
   favicon: join("public", "favicon.png"),
 };
 
-// const DevToolPluginConfig = {
-//   filename: "[name].js.map",
-// };
+const plugins = [
+  new CleanWebpackPlugin(),
+  new HtmlWebpackPlugin(HtmlPluginConfig),
+  // new SourceMapDevToolPlugin(DevToolPluginConfig),
+];
 
 module.exports = {
   entry: ["./src/index.js"],
@@ -31,9 +32,15 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(HtmlPluginConfig),
-    // new SourceMapDevToolPlugin(DevToolPluginConfig),
-  ],
+  performance: { maxEntrypointSize: 500000, maxAssetSize: 300000 },
+  stats: {
+    all: false,
+    errors: true,
+    warnings: true,
+    logging: "warn",
+    chunks: true,
+    chunksSort: "id",
+    colors: true,
+  },
+  plugins,
 };

@@ -18,6 +18,7 @@ module.exports = {
     "react/jsx-indent": [2, 2],
     "import/extensions": [2, "never", { jsx: "always" }],
     "import/no-extraneous-dependencies": [2, { devDependencies: ["webpack/**/*", "webpack.*"] }],
+    "react/jsx-props-no-spreading": [1, { html: "ignore" }],
   },
   overrides: [
     {

@@ -7,4 +7,13 @@ module.exports = merge(common, {
   devServer: {
     port: 7575,
   },
+  stats: {
+    chunks: false,
+    errorDetails: true,
+    modules: true,
+    excludeModules: moduleSource => {
+      const isExclude = [/.*node_modules?.*/, /^\(webpack\).*/].some(reg => reg.test(moduleSource));
+      return isExclude || !moduleSource;
+    },
+  },
 });
