@@ -7,7 +7,7 @@ function BaseText(props) {
   const { children } = props
   const [name, setName] = useState('仮面ライダーカブト')
   useEffect(() => {
-    setName(`Hyper ${children}`)
+    setName(children)
   }, [children])
   return (
     <NameContext.Provider value={children}>
