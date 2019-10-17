@@ -3,9 +3,12 @@ const prod = mode === "production";
 
 module.exports = {
   presets: [
-    "@babel/preset-env",
+    ["@babel/preset-env", { modules: false }],
     "@babel/preset-react",
     ["@emotion/babel-preset-css-prop", { sourceMap: !prod, autoLabel: !prod, labelFormat: "[local]" }],
   ],
-  plugins: ["@babel/plugin-transform-runtime", "react-hot-loader/babel"],
+  plugins: [
+    ["@babel/plugin-transform-runtime", { corejs: { version: 3, proposals: true }, useESModules: true }],
+    "react-hot-loader/babel",
+  ],
 };

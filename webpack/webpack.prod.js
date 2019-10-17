@@ -7,8 +7,8 @@ module.exports = merge(common, {
   optimization: {
     splitChunks: {
       // include all types of chunks
-      minSize: 200000,
-      maxSize: 500000,
+      minSize: 30000,
+      maxSize: 800000,
       chunks: "async",
     },
   },
