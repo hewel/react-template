@@ -9,7 +9,7 @@ module.exports = merge(common, {
       // include all types of chunks
       minSize: 200000,
       maxSize: 500000,
-      chunks: "all",
+      chunks: "async",
     },
   },
   devtool: "source-map",
