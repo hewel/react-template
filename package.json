@@ -44,10 +44,12 @@
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "@emotion/core": "^10.0.14",
+    "@hot-loader/react-dom": "^16.10.2",
     "office-ui-fabric-react": "^7.50.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "react-hot-loader": "^4.12.15"
   },
   "config": {
     "commitizen": {

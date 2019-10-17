@@ -16,7 +16,7 @@ module.exports = {
     "linebreak-style": "off",
     "import/no-unresolved": [2, { ignore: [`U|utils.*`] }],
     "react/jsx-indent": [2, 2],
-    "import/extensions": [2, "never", { jsx: "always" }],
+    "import/extensions": [2, "never"],
     "import/no-extraneous-dependencies": [2, { devDependencies: ["webpack/**/*", "webpack.*"] }],
     "react/jsx-props-no-spreading": [1, { html: "ignore" }],
   },

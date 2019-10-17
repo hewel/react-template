@@ -7,5 +7,5 @@ module.exports = {
     "@babel/preset-react",
     ["@emotion/babel-preset-css-prop", { sourceMap: !prod, autoLabel: !prod, labelFormat: "[local]" }],
   ],
-  plugins: ["@babel/plugin-transform-runtime"],
+  plugins: ["@babel/plugin-transform-runtime", "react-hot-loader/babel"],
 };

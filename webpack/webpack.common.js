@@ -18,10 +18,16 @@ const plugins = [
 ];
 
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: ["react-hot-loader/patch", "./src/index.js"],
   output: {
     path: join("dist"),
     filename: "[name].bundle.js",
+  },
+  resolve: {
+    extensions: [".wasm", ".mjs", ".js", ".json", ".jsx", ".ts", ".tsx"],
+    alias: {
+      "react-dom": "@hot-loader/react-dom",
+    },
   },
   module: {
     rules: [
