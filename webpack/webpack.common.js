@@ -18,7 +18,7 @@ const plugins = [
 ];
 
 module.exports = {
-  entry: ["react-hot-loader/patch", "./src/index.js"],
+  entry: ["react-hot-loader/patch", "./src/index.tsx"],
   output: {
     path: join("dist"),
     filename: "[name].bundle.js",
@@ -32,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.[j|t]sx?$/,
         include: join("src"),
         use: ["babel-loader"],
       },

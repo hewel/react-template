@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "pretty": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "jsx": "react"
+  },
+  "include": ["src/**/*"]
+}
