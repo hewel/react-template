@@ -3,7 +3,7 @@ const prod = mode === "production";
 
 module.exports = {
   presets: [
-    ["@babel/preset-env"],
+    "@babel/preset-env",
     "@babel/preset-react",
     "@babel/preset-typescript",
     ["@emotion/babel-preset-css-prop", { sourceMap: !prod, autoLabel: !prod, labelFormat: "[local]" }],
