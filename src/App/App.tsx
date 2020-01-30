@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button'
 
 const { useState } = React
 
@@ -13,7 +12,7 @@ export default function App(): React.ReactElement {
   return (
     <div className="app">
       <span>Hello World! {text}!</span>
-      <PrimaryButton onClick={handleBtnClick}>Change {text}</PrimaryButton>
+      <button onClick={handleBtnClick}>Change {text}</button>
     </div>
   )
 }

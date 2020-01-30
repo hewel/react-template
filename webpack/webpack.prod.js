@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const merge = require("webpack-merge");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const common = require("./webpack.common");
